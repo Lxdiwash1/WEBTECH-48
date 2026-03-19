@@ -1,3 +1,4 @@
+/* ---------- GLOBAL ---------- */
 *{
     margin:0;
     padding:0;
@@ -9,16 +10,22 @@ body{
     background:#f5f5f5;
 }
 
+img{
+    max-width:100%;
+    height:auto;
+}
+
 /* ---------- HEADER / NAVBAR ---------- */
 header{
     background:#2f7d57;
-    padding:20px 60px;
+    padding:20px;
 }
 
 .navbar{
     display:flex;
     align-items:center;
     justify-content:space-between;
+    flex-wrap:wrap;
 }
 
 .logo{
@@ -30,7 +37,7 @@ header{
 .menu{
     display:flex;
     list-style:none;
-    gap:30px;
+    gap:20px;
 }
 
 .menu a{
@@ -52,12 +59,12 @@ header{
     border-radius:4px;
 }
 
-/* ---------- HERO SECTION WITH BACKGROUND IMAGE ---------- */
+/* ---------- HERO SECTION ---------- */
 .hero{
-    height:90vh;
+    min-height:80vh;
     display:flex;
     align-items:center;
-    padding-left:80px;
+    padding:40px 20px;
 
     background-image:url("uni.jpg");
     background-size:cover;
@@ -75,7 +82,7 @@ header{
 }
 
 .hero-text h1{
-    font-size:60px;
+    font-size:48px;
 }
 
 .hero-text span{
@@ -84,7 +91,7 @@ header{
 
 .hero-text p{
     margin-top:15px;
-    font-size:20px;
+    font-size:18px;
     line-height:1.6;
 }
 
@@ -93,6 +100,7 @@ header{
     margin-top:30px;
     display:flex;
     gap:20px;
+    flex-wrap:wrap;
 }
 
 .admission{
@@ -104,25 +112,16 @@ header{
     font-size:18px;
 }
 
-.academic-link{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:18px;
-}
-
-/* ---------- PROGRAMMES PAGE ---------- */
+/* ---------- PROGRAMMES ---------- */
 .programmes{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    padding:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
     gap:25px;
+    padding:20px;
 }
 
 .card{
     background:white;
-    width:260px;
     padding:20px;
     border-radius:8px;
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
@@ -132,13 +131,13 @@ header{
 .card h2{
     color:#0b3c6f;
     margin-bottom:10px;
-    font-size:22px;
+    font-size:20px;
 }
 
 .card p{
     color:#555;
     margin-bottom:15px;
-    font-size:16px;
+    font-size:15px;
 }
 
 .card a{
@@ -149,38 +148,43 @@ header{
     padding:10px 15px;
     text-decoration:none;
     border-radius:5px;
-    font-size:16px;
+    font-size:14px;
 }
 
 .card a:hover{
     background:#145ea8;
 }
 
-/* ---------- REGISTER INTEREST FORM ---------- */
+/* ---------- FORM ---------- */
 .interest{
-    padding:40px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     text-align:center;
 }
 
 .interest h2{
     margin-bottom:20px;
-    font-size:28px;
+    font-size:26px;
 }
 
 .interest form{
     background:white;
-    padding:25px;
+    padding:20px;
+    width:100%;
     max-width:400px;
-    margin:auto;
     border-radius:5px;
+}
+
+.form-group{
+    margin-bottom:15px;
 }
 
 .interest input,
 .interest select{
     width:100%;
     padding:10px;
-    margin-top:5px;
-    margin-bottom:15px;
     border:1px solid #ccc;
     border-radius:5px;
     font-size:16px;
@@ -201,60 +205,58 @@ header{
     background:#145ea8;
 }
 
-/* ---------- ERROR MESSAGES ---------- */
+/* ---------- ERROR ---------- */
 .error{
-    color:red !important;      /* ensures errors appear in red */
+    color:red;
     font-size:14px;
     display:block;
     margin-bottom:5px;
 }
 
-/* ---------- COURSE DETAIL PAGES ---------- */
+/* ---------- SUCCESS ---------- */
+#successMsg{
+    font-size:16px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.success-text{
+    color:green;
+}
+
+/* ---------- MODULES ---------- */
 .modules{
     max-width:800px;
     margin:40px auto;
-    padding:30px;
+    padding:20px;
     background:white;
     border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
 .modules h2{
-    font-size:30px;
-    color:#1e4d3c;
-    margin-bottom:15px;
+    font-size:24px;
+    margin-bottom:10px;
 }
 
 .modules p{
-    font-size:20px;
+    font-size:16px;
     line-height:1.6;
-    color:#333;
-    margin-bottom:20px;
 }
 
 .modules ul{
-    font-size:20px;
     padding-left:20px;
-}
-
-.modules li{
-    margin-bottom:10px;
 }
 
 /* ---------- BACK BUTTON ---------- */
 .back{
     display:inline-block;
-    margin:30px;
-    font-size:18px;
+    margin:20px;
+    font-size:16px;
     padding:10px 20px;
     background:#1e4d3c;
     color:white;
     text-decoration:none;
     border-radius:5px;
-}
-
-.back:hover{
-    background:#145ea8;
 }
 
 /* ---------- FOOTER ---------- */
@@ -264,42 +266,38 @@ footer{
     background:#ddd;
 }
 
-/* ---------- MOBILE RESPONSIVE ---------- */
+/* ---------- MOBILE ---------- */
 @media(max-width:768px){
 
-.hero{
+.navbar{
     flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.menu{
+    flex-direction:column;
+    width:100%;
+}
+
+.contact-btn{
+    width:100%;
+}
+
+.hero{
     text-align:center;
-    padding:40px;
 }
 
 .hero-text{
     width:100%;
 }
 
-.programmes{
-    flex-direction:column;
-    align-items:center;
+.hero-text h1{
+    font-size:28px;
 }
 
-}
-
-/* ---------- CENTER REGISTER INTEREST AND SUCCESS MESSAGE ---------- */
-.interest {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   /* centers form and heading horizontally */
-    justify-content: center; /* optional: vertically centers content inside section */
-    text-align: center;     /* centers heading and success messages */
-}
-
-#successMsg {
+.hero-text p{
     font-size:16px;
-    margin-top:10px;
-    text-align:center;      /* ensures green success message is centered */
-    font-weight:bold;
 }
 
-.success-text{
-    color:green;           /* green color for success message */
 }
