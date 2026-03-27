@@ -63,6 +63,8 @@ INSERT INTO `interestedstudents` (`InterestID`, `ProgrammeID`, `StudentName`, `E
 (2, 4, 'Jane Smith', 'jane.smith@example.com', '2026-03-12 09:57:38'),
 (3, 6, 'Alex Brown', 'alex.brown@example.com', '2026-03-12 09:57:38'),
 (4, 9, 'Priya Patel', 'priya.patel@example.com', '2026-03-12 09:57:38'),
+(5, 5, 'Diwash Ghimire', 'diwashghimire81@gmail.com', '2026-03-19 22:34:49'),
+(6, 8, 'Diwash Ghimire', 'diwashghimire81@gmail.com', '2026-03-25 11:17:48');
 
 -- --------------------------------------------------------
 
